@@ -113,7 +113,7 @@ jobs:
       - run: pip install -r backend/requirements-dev.txt
       - name: Generate sample infrastructure (also checks HCL and YAML syntax)
         run: python scripts/validate_generated.py "$RUNNER_TEMP/generated"
-      - uses: hashicorp/setup-terraform@v3
+      - uses: hashicorp/setup-terraform@v4
       - name: terraform validate (the files must be valid for the AWS provider)
         run: |
           set -e
