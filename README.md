@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SysDesign AI
 
 SysDesign AI is an AI-powered system design assistant. A user describes an application in natural language and the system produces a proposed cloud architecture, a simple performance model, a transparent cost estimate, architecture recommendations, and starter Terraform/Kubernetes code.
@@ -164,3 +165,7 @@ Build an e-commerce application for 100000 users with product search, payments, 
 - Performance analysis is intentionally model-based; it is not a production load test.
 - Cost analysis uses the project's illustrative pricing table and should be presented as an estimate.
 - Terraform and Kubernetes generators create reviewable starter code only; they do not deploy infrastructure.
+=======
+# sysdesign_ai
+Ai-powered system architecture design and infrastructure code generation engine distributed systems
+>>>>>>> a6f801ac9bce374179ebf7a8db125b24a74b446b
