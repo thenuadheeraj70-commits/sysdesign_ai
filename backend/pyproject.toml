@@ -1,0 +1,57 @@
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+extend-exclude = [".venv", "storage"]
+
+[tool.ruff.lint]
+# E/W pycodestyle, F pyflakes, I import order, B likely bugs, UP modern syntax
+select = ["E", "W", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.flake8-bugbear]
+# FastAPI declares dependencies and query parameters as argument defaults.
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Query"]
+
+[tool.ruff.lint.per-file-ignores]
+# Tests assert on long generated strings and use short lambdas.
+"tests/**" = ["E501", "E731", "E741"]
+# Terraform and Kubernetes templates are plain text; long lines are part of the output.
+"app/services/terraform_generator.py" = ["E501"]
+"app/services/kubernetes_generator.py" = ["E501"]
+"app/services/zip_export.py" = ["E501"]
+# The AI prompts are long prose lines.
+"app/services/ai_*.py" = ["E501"]
+# Plain-language explanations in the planning tools.
+"app/services/scenarios.py" = ["E501"]
+# Plain-language text in the toolkit tools.
+"app/services/toolkit/*.py" = ["E501"]
+# The printable document template and its plain-language text.
+"app/services/export_doc.py" = ["E501"]
+"app/services/diagram_svg.py" = ["E501"]
+"app/api/routes/sharing.py" = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+packages = ["app"]
+ignore_missing_imports = true
+check_untyped_defs = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+plugins = ["pydantic.mypy"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"
+
+[tool.coverage.run]
+source = ["app"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+# The build fails below this. Raise it as coverage grows; never lower it to make a build pass.
+fail_under = 90
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+]

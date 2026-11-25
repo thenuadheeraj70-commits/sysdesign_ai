@@ -1,0 +1,62 @@
+{
+  "compute": {
+    "unit": "instance",
+    "monthly_price": 70.0
+  },
+  "database": {
+    "unit": "instance",
+    "monthly_price": 150.0
+  },
+  "load_balancer": {
+    "unit": "load balancer",
+    "monthly_price": 25.0
+  },
+  "cache": {
+    "unit": "node",
+    "monthly_price": 50.0
+  },
+  "storage": {
+    "unit": "GB",
+    "monthly_price": 0.1
+  },
+  "queue": {
+    "unit": "queue",
+    "monthly_price": 10.0
+  },
+  "cdn": {
+    "unit": "distribution",
+    "monthly_price": 20.0
+  },
+  "search": {
+    "unit": "node",
+    "monthly_price": 100.0
+  },
+  "serverless": {
+    "unit": "function",
+    "monthly_price": 5.0
+  },
+  "container": {
+    "unit": "instance",
+    "monthly_price": 60.0
+  },
+  "api_gateway": {
+    "unit": "gateway",
+    "monthly_price": 15.0
+  },
+  "auth": {
+    "unit": "service",
+    "monthly_price": 10.0
+  },
+  "monitoring": {
+    "unit": "service",
+    "monthly_price": 15.0
+  },
+  "network": {
+    "unit": "gateway",
+    "monthly_price": 32.0
+  },
+  "security": {
+    "unit": "service",
+    "monthly_price": 10.0
+  }
+}

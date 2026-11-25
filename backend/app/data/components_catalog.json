@@ -1,0 +1,36 @@
+{
+  "supported_types": [
+    "load_balancer",
+    "api_gateway",
+    "compute",
+    "container",
+    "serverless",
+    "database",
+    "cache",
+    "storage",
+    "cdn",
+    "queue",
+    "search",
+    "auth",
+    "security",
+    "monitoring",
+    "network"
+  ],
+  "providers": [
+    "aws",
+    "azure",
+    "gcp",
+    "generic"
+  ],
+  "non_core_types": [
+    "queue",
+    "cdn",
+    "search",
+    "auth",
+    "security",
+    "monitoring",
+    "network",
+    "api_gateway",
+    "serverless"
+  ]
+}

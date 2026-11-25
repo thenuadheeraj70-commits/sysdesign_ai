@@ -1,0 +1,411 @@
+/* Phase 4: the design toolkit. */
+
+.toolkit h4 {
+  margin: 18px 0 6px;
+}
+.toolkit h5 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.tool-headlines {
+  margin: 8px 0 4px;
+  padding-left: 18px;
+}
+.tool-headlines li {
+  margin: 3px 0;
+}
+
+.tool-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 10px 14px;
+  margin: 8px 0 12px;
+}
+.tool-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.9rem;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.tool-field legend {
+  padding: 0;
+  font-size: 0.9rem;
+}
+.tool-field input,
+.tool-field select {
+  min-width: 0;
+}
+.tool-field small {
+  font-size: 0.78rem;
+}
+
+.tool-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.tool-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 12px;
+}
+.tool-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 14px 12px;
+  margin: 8px 0;
+  background: #fff;
+  min-width: 0;
+}
+.tool-cards .tool-card {
+  margin: 0;
+}
+.tool-card h4 {
+  margin-top: 4px;
+}
+.tool-card p {
+  margin: 6px 0;
+}
+
+.tool-code {
+  max-height: 360px;
+  overflow: auto;
+  margin: 8px 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #f6f8fb;
+  font-size: 0.82rem;
+  white-space: pre;
+}
+
+.method {
+  display: inline-block;
+  min-width: 52px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  background: #55657d;
+}
+.method-get {
+  background: #17803d;
+}
+.method-post {
+  background: #1f5fd1;
+}
+.method-put,
+.method-patch {
+  background: #b45309;
+}
+.method-delete {
+  background: #b42318;
+}
+
+.callout {
+  padding: 10px 12px;
+  border-left: 4px solid var(--warn);
+  background: #fff8ec;
+  border-radius: 4px;
+}
+
+.seg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+}
+.seg-btn {
+  background: #fff;
+  color: var(--accent-dark);
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+.seg-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+.region-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 4px 12px;
+  margin-top: 4px;
+}
+.user-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+/* ---------- glossary ---------- */
+.term {
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  cursor: help;
+  position: relative;
+}
+.term:hover::after,
+.term:focus::after {
+  content: attr(data-definition);
+  position: absolute;
+  z-index: 30;
+  left: 0;
+  top: calc(100% + 6px);
+  width: max-content;
+  max-width: min(320px, 80vw);
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.35;
+  white-space: normal;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+.glossary dt {
+  font-weight: 700;
+  margin-top: 10px;
+}
+.glossary dd {
+  margin: 2px 0 0;
+  color: var(--ink-soft);
+}
+
+.explain {
+  margin: 12px 0;
+}
+.explain-body {
+  margin-top: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fafbfd;
+  font-size: 0.88rem;
+}
+
+/* ---------- sequence diagram ---------- */
+.seq-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  margin: 8px 0;
+}
+.seq {
+  display: block;
+  font-family: inherit;
+}
+.seq-box {
+  fill: #eaf1fd;
+  stroke: var(--accent);
+}
+.seq-name {
+  font-size: 12px;
+  font-weight: 600;
+  fill: var(--ink);
+}
+.seq-life {
+  stroke: #9fb0c6;
+  stroke-dasharray: 4 4;
+}
+.seq-line {
+  stroke: var(--ink);
+  stroke-width: 1.4;
+}
+.seq-line.dashed {
+  stroke-dasharray: 5 4;
+}
+.seq-head {
+  fill: var(--ink);
+}
+.seq-head-open {
+  stroke: var(--ink);
+  stroke-width: 1.4;
+}
+.seq-label {
+  font-size: 11px;
+  fill: var(--ink);
+}
+.seq-small {
+  font-size: 11px;
+  fill: var(--ink-soft);
+}
+.seq-small.strong {
+  font-weight: 700;
+  fill: var(--ink);
+}
+.seq-note {
+  fill: #fff8ec;
+  stroke: #e0b36a;
+}
+.seq-frame {
+  fill: none;
+  stroke: #9fb0c6;
+}
+.seq-else {
+  stroke: #9fb0c6;
+  stroke-dasharray: 6 4;
+}
+
+/* ---------- Phase 5: AI assistant ---------- */
+.refine-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.refine-row input {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+}
+.refine-answer {
+  margin: 12px 0;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fafbfd;
+}
+.ai-source {
+  display: inline-flex;
+  gap: 4px;
+  margin-right: 6px;
+}
+.diff {
+  margin: 8px 0;
+  padding: 6px 10px;
+  border-left: 4px solid var(--line);
+  border-radius: 4px;
+}
+.diff ul {
+  margin: 4px 0 0;
+  padding-left: 18px;
+}
+.diff-add {
+  border-left-color: #17803d;
+  background: #eefaf2;
+}
+.diff-remove {
+  border-left-color: #b42318;
+  background: #fdf1f0;
+}
+.diff-change {
+  border-left-color: #b45309;
+  background: #fff8ec;
+}
+.history {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.history li {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+}
+button.link {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--accent-dark);
+  text-align: left;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.import-doc {
+  margin: 8px 0;
+}
+.feedback {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 0.9rem;
+}
+.feedback input {
+  flex: 1 1 160px;
+  min-width: 0;
+}
+.feedback .secondary.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+progress {
+  width: 100%;
+}
+
+/* ---------- Phase 6: export and share ---------- */
+.shared {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.shared .panel {
+  margin: 14px 0;
+}
+.shared-head h1 {
+  margin: 6px 0;
+}
+.shared .seq-scroll img {
+  display: block;
+  max-width: none;
+}
+@media print {
+  .app:not(.shared) > header,
+  .input-panel,
+  .code-tabs,
+  .tool-actions,
+  .variant-bar,
+  .panel-side,
+  button,
+  .no-print {
+    display: none !important;
+  }
+  body,
+  .app,
+  .panel {
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+  .panel {
+    break-inside: avoid;
+    border: 0 !important;
+  }
+  .seq-scroll {
+    overflow: visible;
+    border: 0;
+  }
+  .shared .seq-scroll img {
+    max-width: 100%;
+    height: auto;
+  }
+}
